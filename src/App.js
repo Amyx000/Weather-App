@@ -15,7 +15,8 @@ function App (){
   const[tempclass, SetTempclass]=useState("")
   const[data,SetData]=useState({})
   const[location,SetLocation]=useState("")
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=7deada42d58fd2e2651c033da55b7cf3`
+  const API_KEY = process.env.REACT_APP_API_KEY
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY}`
   
   function chnglocation(event){
     SetLocation(event.target.value);
